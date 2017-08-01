@@ -6,10 +6,14 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { CollapsibleModule } from 'angular2-collapsible'; // <-- import the module
 
 import {AppComponent} from './app.component';
+import { ErreurTraceComponent } from './erreur-trace/erreur-trace.component';
+import { TraceErreurComponent } from './trace-erreur/trace-erreur.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ErreurTraceComponent,
+    TraceErreurComponent
   ],
   imports: [
     BrowserModule,

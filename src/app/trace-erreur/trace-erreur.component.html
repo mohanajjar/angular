@@ -1,0 +1,17 @@
+<h2>critères de recherche des erreurs</h2>
+<form (ngSubmit )="onSubmit(exampleNgControlForm.value )"
+	#exampleNgControlForm="ngForm">
+	<div class="form-group">
+		<label class="col-xs-2 control-label">Empty me : </label>
+		<div class="col-xs-10">
+			<input type="text" style="width: 300px" class="form-control" required
+				[ (ngModel )]="exampleElemenValue" ngControl="exampleElemenValue"
+				#exampleNgControl="ngForm">
+			<div
+				[hidden]="exampleNgControl.valid || exampleNgControl.pristine class="
+				alertalert-danger ">The current element is empty .Value
+				required !</div>
+			value is : { {exampleElemenValue } }
+		</div>
+	</div>
+</form>
