@@ -26,12 +26,23 @@
 	<td>{{hero.email}}</td>
 	</collapsible-table-row>
 	<collapsible-table-row-detail #detail1 >
-	<table>
-		<tr>
-			<td width="75%">Row #1 Detail #1</td>
-			<td>Row #1 Detail #2</td>
-		</tr>
-	</table>
+	
+<!-- 	sub table -->
+	<table class="table table-hover">
+      <thead>
+        <td width="35%">app</td>
+        <td>Name</td>
+        <td>Host</td>
+      </thead>
+      <tbody>
+        <tr>
+          <td >test1</td>
+          <td >test2</td>
+         <td >test3</td>
+        </tr>
+      </tbody>
+    </table>
+    
 	</collapsible-table-row-detail>
 </tbody>
 
