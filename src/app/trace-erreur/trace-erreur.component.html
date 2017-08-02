@@ -1,47 +1,64 @@
 <div class="container">
 	<h3>Recherche des erreurs par criters</h3>
-	<form #f="ngForm" novalidate="novalidate">
+	<form novalidate (ngSubmit)="onSubmit(erreur)">
 		<div class="form-group">
-			<label for="codeTypeErreur">Code type Erreur</label> 
-			<select class="form-control"  [(ngModel)]="erreur.codeTypeErreur"
+			<label for="codeTypeErreur">Code type Erreur</label> <select
+				class="form-control" [(ngModel)]="erreur.codeTypeErreur"
 				id="codeTypeErreur" required>
-				<option >INCOHERENCE_AS400</option>
-				<option >REFERENTIEL_PRODUIT</option>
-				<option >REFERENTIEL_PARTENAIRE</option>
-				<option >OPERATION</option>
-				<option >COMMISSION_PLACEMENT</option>
-				<option >TECHNIQUE</option>
+				<option>INCOHERENCE_AS400</option>
+				<option>REFERENTIEL_PRODUIT</option>
+				<option>REFERENTIEL_PARTENAIRE</option>
+				<option>OPERATION</option>
+				<option>COMMISSION_PLACEMENT</option>
+				<option>TECHNIQUE</option>
 			</select>
 		</div>
 
 
 		<div class="form-group">
-			<label for="alterEgo">Id sequence</label> <input type="text" [(ngModel)]="erreur.idSequence"
-				class="form-control" id="alterEgo">
+			<label for="alterEgo">Id sequence</label> <input type="text" 
+				[(ngModel)]="erreur.idSequence" class="form-control" id="alterEgo">
 		</div>
 		
+
 		<div class="form-group">
-			<label for="sourceErreur">Source Erreur</label> <select class="form-control" [(ngModel)]="erreur.sourceErreur"
+			<label for="sourceErreur">Source Erreur</label> <select
+				class="form-control" [(ngModel)]="erreur.sourceErreur"
 				id="sourceErreur" required>
-				<option >REFERENTIEL</option>
-				<option >AS400</option>
-				<option >ROUTEUR</option>
-				<option >TRACES</option>
+				<option>REFERENTIEL</option>
+				<option>AS400</option>
+				<option>ROUTEUR</option>
+				<option>TRACES</option>
 			</select>
 		</div>
-		
+
 
 		<div class="form-group">
-			<label for="codeTypeEo">Code Type EO</label> <select class="form-control" [(ngModel)]="erreur.codeTypeEo"
-				id="codeTypeEo" required>
-				<option >COMMISSION</option>
-				<option >REMISE_EN_BANQUE</option>
-				<option >RH</option>
-				<option >EO</option>
+			<label for="codeTypeEo">Code Type EO</label> <select
+				class="form-control" [(ngModel)]="erreur.codeTypeEo" id="codeTypeEo"
+				required>
+				<option>COMMISSION</option>
+				<option>REMISE_EN_BANQUE</option>
+				<option>RH</option>
+				<option>EO</option>
 			</select>
 		</div>
-		
+
 		<button type="submit" class="btn btn-success">Submit</button>
+
+		<div class="form-group">
+			<label class="col-xs-4 control-label">Submitted Data : </label>
+			<div class="col-xs-8">
+				<div [hidden]="!submitted">
+					<span>from angulartypescript.com</span>
+					<textarea style="width: 300px" class="form-control" rows="6">{{data}}</textarea>
+				</div>
+				<div [hidden]="submitted">
+					<span>Edit your Data then click Submit to get Data from :
+						angulartypescript.com</span>
+				</div>
+			</div>
+		</div>
 	</form>
 </div>
 
