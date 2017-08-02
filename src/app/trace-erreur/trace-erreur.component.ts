@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import {CORE_DIRECTIVES,FORM_DIRECTIVES} from 'angular2/common';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 export class Erreur {
   idEo: number;
-  codeTypeErreur: string = "INCOHERENCE_AS400" ;
+  codeTypeErreur: string ;
   codeTypeEo: string;
-  idSequence: string = " 2202117 ";
-  numeroContrat:string;
-  sourceErreur:string="AS400";
-  dateDebutErreur:string;
-  dateFinErreur:string;
-  nomFichier:string;
+  idSequence: string;
+  numeroContrat: string;
+  sourceErreur: string;
+  dateDebutErreur: string;
+  dateFinErreur: string;
+  nomFichier: string;
 }
 
 @Component({
@@ -20,9 +20,19 @@ export class Erreur {
   styleUrls: ['./trace-erreur.component.css']
 })
 export class TraceErreurComponent implements OnInit {
-  erreur =Erreur;
-  constructor() { }
+  public erreur = new Erreur();
+  constructor() {
+   console.log("Form Component Start");
+   }
+    submitted = false; //form not submited : default
+    data: string; //this variable contains our data
+    //Show data after form submit and set submitted to true
+    onSubmit(data) {
+        this.submitted = true;
+        this.data = JSON.stringify(data, null, 2);
+        console.log(this.data);
+    }
   ngOnInit() {
+    console.log('From init method');
   }
-
 }
