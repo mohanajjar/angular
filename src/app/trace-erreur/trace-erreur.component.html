@@ -1,6 +1,6 @@
 <div class="container">
 	<h3>Recherche des erreurs par criters</h3>
-	<form novalidate (ngSubmit)="onSubmit(erreur)">
+	<form #erreurFormData="ngForm" novalidate  (ngSubmit)="loadErreurs(erreurFormData.value)">
 		<div class="form-group">
 			<label for="codeTypeErreur">Code type Erreur</label> <select
 				class="form-control" [(ngModel)]="erreur.codeTypeErreur"
@@ -14,12 +14,11 @@
 			</select>
 		</div>
 
-
 		<div class="form-group">
-			<label for="alterEgo">Id sequence</label> <input type="text" 
+			<label for="alterEgo">Id sequence</label> <input type="text"
 				[(ngModel)]="erreur.idSequence" class="form-control" id="alterEgo">
 		</div>
-		
+
 
 		<div class="form-group">
 			<label for="sourceErreur">Source Erreur</label> <select
@@ -60,6 +59,7 @@
 			</div>
 		</div>
 	</form>
+
 </div>
 
 
