@@ -1,50 +1,23 @@
 <div class="container">
 	<h3>Recherche des erreurs par criters</h3>
-	<form #erreurFormData="ngForm" novalidate  (ngSubmit)="loadErreurs(erreurFormData.value)">
+	<form #erreurFrom="ngForm" (ngSubmit)="submit(erreurFrom.value)">
 		<div class="form-group">
-			<label for="codeTypeErreur">Code type Erreur</label> <select
-				class="form-control" [(ngModel)]="erreur.codeTypeErreur"
-				id="codeTypeErreur" required>
-				<option>INCOHERENCE_AS400</option>
-				<option>REFERENTIEL_PRODUIT</option>
-				<option>REFERENTIEL_PARTENAIRE</option>
-				<option>OPERATION</option>
-				<option>COMMISSION_PLACEMENT</option>
-				<option>TECHNIQUE</option>
-			</select>
+			<label for="td_quantity">IdEo</label> <input type="number"
+				class="form-control" id="td_quantity" name="quantity"
+				[ngModel]="123">
 		</div>
-
+		
 		<div class="form-group">
-			<label for="alterEgo">Id sequence</label> <input type="text"
-				[(ngModel)]="erreur.idSequence" class="form-control" id="alterEgo">
-		</div>
-
-
-		<div class="form-group">
-			<label for="sourceErreur">Source Erreur</label> <select
-				class="form-control" [(ngModel)]="erreur.sourceErreur"
-				id="sourceErreur" required>
-				<option>REFERENTIEL</option>
-				<option>AS400</option>
-				<option>ROUTEUR</option>
-				<option>TRACES</option>
-			</select>
-		</div>
-
-
-		<div class="form-group">
-			<label for="codeTypeEo">Code Type EO</label> <select
-				class="form-control" [(ngModel)]="erreur.codeTypeEo" id="codeTypeEo"
+			<label for="td_name">IdSequence</label> <input type="text"
+				class="form-control" id="td_name" name="name" [ngModel]="erreur.idSequence"
 				required>
-				<option>COMMISSION</option>
-				<option>REMISE_EN_BANQUE</option>
-				<option>RH</option>
-				<option>EO</option>
-			</select>
 		</div>
-
-		<button type="submit" class="btn btn-success">Submit</button>
-
+	
+		<div class="form-group">
+			<input type="submit" class="btn btn-success" value="Submit"
+				[disabled]="erreurFrom.invalid">
+		</div>
+		
 		<div class="form-group">
 			<label class="col-xs-4 control-label">Submitted Data : </label>
 			<div class="col-xs-8">
@@ -60,6 +33,7 @@
 		</div>
 	</form>
 
+ <p>First name value: {{ erreur.idSequence }}</p>
 </div>
 
 

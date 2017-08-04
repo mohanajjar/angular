@@ -7,7 +7,6 @@ export class Hero {
   username: string;
   email: string;
 }
- 
 const HEROES: Hero[] = [
   { id: 1, name: 'Mr. najjar',username:'mohanajjar',email: 'mohanajjar@gmail.com' },
   { id: 2, name: 'Mr. salami',username:'mohanajjar',email: 'salami@gmail.com' },
